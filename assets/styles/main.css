@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+a, button {
+  cursor: pointer;
+}
+
 img {
   max-width: 100%;
 }
@@ -63,7 +67,7 @@ body {
 }
 
 /* Section & Container */
-.section {
+.section, footer {
   padding: 0 16px;
 }
 
@@ -118,7 +122,6 @@ body {
 
 .nav-dropdown a {
   display: inline-block;
-  cursor: pointer;
   font-weight: 700;
   letter-spacing: 0.03em;
   padding: 4px 0;
@@ -143,11 +146,16 @@ body {
 }
 
 .hero-start,
+.about-end {
+  order: 1;
+}
+
+.hero-start,
 .about-end,
-.works-description {
+.works-description,
+.contact-description {
   display: flex;
   flex-direction: column;
-  order: 1;
   width: 100%;
   align-items: center;
   min-width: 450px;
@@ -156,7 +164,8 @@ body {
 .hero-start h1,
 .hero-start h6,
 .about-end h2,
-.works-description h2 {
+.works-description h2,
+.contact-description h2 {
   font-weight: 700;
   line-height: 1.2;
   color: var(--color-on-surface);
@@ -170,7 +179,8 @@ body {
 
 .hero-start h1 span,
 .about-end h2 span,
-.works-description h2 span {
+.works-description h2 span,
+.contact-description h2 span {
   background: var(--color-gradient);
   background-clip: text;
   -webkit-background-clip: text;
@@ -201,19 +211,142 @@ body {
   margin-bottom: 48px;
 }
 
-/* About */
 .about h2,
-.works-description h2 {
+.works-description h2,
+.contact-description h2 {
   font-size: var(--font-size-display-small);
   margin-bottom: 24px;
   text-align: center;
 }
 
+.works-description {
+  margin-bottom: 64px;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+  overflow: hidden;
+}
+
+.grid-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.grid-item.item-1 {
+  grid-row: span 2/span 2;
+}
+
+.grid-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.grid-item.item-1,
+.grid-item.item-2,
+.grid-item.item-3 {
+  min-height: 320px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: start;
+}
+
+.grid-item .grid-item-meta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  background-color: rgba(0,0,0,0.36);
+}
+
+.grid-item .grid-item-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.grid-item.item-1 .grid-item-image {
+  background-image: url("../images/works-1.webp");
+}
+
+.grid-item.item-2 .grid-item-image {
+  background-image: url("../images/works-2.webp");
+}
+
+.grid-item.item-3 .grid-item-image {
+  background-image: url("../images/works-3.webp");
+}
+
+.grid-item .grid-item-meta h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: var(--font-size-title-large);
+  z-index: 3;
+}
+
+.grid-item .grid-item-meta h3,
+.grid-item .grid-item-meta p {
+  color: var(--color-surface);
+}
+
+.contact-form {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+}
+
+.contact-form-field {
+  background-color: var(--color-surface-variant);
+  line-height: 48px;
+  padding: 0 24px;
+  border-radius: 24px;
+}
+
+.contact-form-field:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.contact-form-button {
+  background: var(--color-gradient);
+  line-height: 48px;
+  padding: 0 24px;
+  border-radius: 24px;
+  color: var(--color-surface);
+  font-size: var(--font-size-label-medium);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  max-width: 140px;
+  text-align: center;
+}
+
+.footer {
+  padding: 96px 0 48px;
+  display: flex;
+  justify-content: center;
+  font-size: var(--font-size-body-small);
+}
 
 
 
 @media screen and  (min-width: 600px) {
-  .section {
+  .section, footer {
     padding: 0 24px;
   }
 
@@ -222,11 +355,10 @@ body {
     height: 88px;
   }
 
-
 }
 
 @media screen and (min-width: 906px) {
-  .section {
+  .section, footer {
     padding: 0 48px;
   }
 
@@ -280,10 +412,28 @@ body {
     align-items: flex-start;
   }
 
+  .works-grid {
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-item.item-1 {
+    min-width: 100%;
+    grid-row: span 2/span 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .grid-item.item-2,
+  .grid-item.item-3 {
+    height: 320px;
+    min-height: 320px;
+  }
+
 }
 
 @media screen and (min-width: 1280px) {
-  .section {
+  .section, footer {
     padding: 0 96px;
   }
 
