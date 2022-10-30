@@ -6,8 +6,7 @@ A simple, responsive, single-page portfolio to showcase projects and skills in a
 
 ### Acceptance Criteria
 
-:ballot_box_with_check: When the page is loaded the page presents your name, a recent photo or avatar, and links to sections about you, your work, and how to contact you
-
+- When the page is loaded the page presents your name, a recent photo or avatar, and links to sections about you, your work, and how to contact you
 - When one of the links in the navigation is clicked then the UI scrolls to the corresponding section
 - When viewing the section about your work then the section contains titled images of your applications
 - When presented with the your first application then that application's image should be larger in size than the others
