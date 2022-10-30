@@ -1,0 +1,35 @@
+/* Reset CSS */
+*:where(:not(html, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Global CSS Properties (variables) */
+:root {
+  --primary: #F54865;
+  --on-primary: #ffffff;
+  --secondary: #FF8B68;
+  --on-secondary: #242938;
+  --surface: #ffffff;
+  --on-surface: #242938;
+  --surface-variant: #F6F6F7;
+  --on-surface-variat: #3E4350;
+  --gradient: linear-gradient(45deg, var(--primary) 14.64%, var(--secondary) 85.36%);
+}
+
+
+/* Global CSS */
+body {
+  font-family: 'Jost', sans-serif;
+  line-height: 1.5;
+  color: var(--on-surface-variat);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
