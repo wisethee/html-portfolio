@@ -240,6 +240,10 @@ body {
   overflow: hidden;
 }
 
+.grid-item:hover .grid-item-meta {
+  transform: translateY(0);
+}
+
 .grid-item.item-1 {
   grid-row: span 2/span 2;
 }
@@ -266,6 +270,8 @@ body {
   right: 0;
   padding: 24px;
   background-color: rgba(0,0,0,0.36);
+  transition: all .2s;
+  transform: translateY(112px);
 }
 
 .grid-item .grid-item-image {
