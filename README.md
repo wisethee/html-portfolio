@@ -4,6 +4,8 @@ A simple, responsive, single-page portfolio to showcase projects and skills in a
 
 [Demo URL](https://wisethee.github.io/html-portfolio/)
 
+![Screenshot](https://github.com/wisethee/html-portfolio/blob/main/assets/images/cover.jpg?raw=true)
+
 ### Acceptance Criteria
 
 - When the page is loaded the page presents your name, a recent photo or avatar, and links to sections about you, your work, and how to contact you
